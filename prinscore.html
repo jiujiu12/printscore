@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- 1.显示打印日期 xxxx年xx月xx日 星期x（当前时间）
+     2.计算班级平均分（保留整数）
+	 成绩如下
+	 "小明:87; 小花:81; 小红:97; 小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76"-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>打印成绩单</title>
+		<style type="text/css">
+			
+		</style>
+		<script type="text/javascript">
+			var date=new Date();
+			// document.write(date);
+			//getDay得到的是数字
+			var week=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+			//月份+1
+			// document.write(date.getMonth()+1);
+			var month=date.getMonth()+1;
+			// 打印时间
+			document.write(date.getHours()+"时"+date.getMinutes()+"分"+date.getSeconds()+"秒"+"<br/>");
+			// 打印日期
+			document.write("日期："+date.getFullYear()+"年"+month+"月"+date.getDate()+"日"+week[date.getDay()]+"<br/>");
+			// 输入成员与成绩数组
+			var score=[["小明",87],["小花",82],["小红",97],["小天",76],["小张",74],["小小",94],["小西",90],
+			["小伍",76],["小迪",64],["小曼",79]];
+			var i,j;
+			var sum=0;
+			// 定义新数组存放成绩
+			var a=new Array();
+			for(i=0;i<score.length;i++)
+		   { 
+				a[i]=score[i][1];//i=0,j=0;a[0]=score[0][2];a[0]
+			   // document.write(a[i]);
+			   sum+=a[i];			
+			}
+			// 输出班级平均成绩
+			document.write("班级平均成绩："+parseInt(sum/score.length)+"<br/>");
+			// 输出班级全体成员成绩
+			for(i=0;i<=score.length;i++)
+			{
+				for(j=0;j<2;j++)
+				{
+					document.write(score[i][j]);
+					document.write("&nbsp;&nbsp;&nbsp;&nbsp;");
+					}
+				document.write("<br/>");
+			}
+			
+			
+		</script>
+			
+	</head>
+	<body>
+		
+	</body>
+</html>
